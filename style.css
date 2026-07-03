@@ -295,6 +295,7 @@ section {
     background: var(--white);
     border-radius: 3px;
     transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(15, 44, 76, 0.25);
 }
 
 .navbar.scrolled .nav-toggle .bar {
