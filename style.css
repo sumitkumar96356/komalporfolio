@@ -166,24 +166,9 @@ section {
 }
 
 /* ==========================================================================
-   SCROLL REVEAL ANIMATIONS
+   SCROLL REVEAL ANIMATIONS (BYPASSED FOR RELIABILITY)
    ========================================================================== */
-.js-enabled .reveal-item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js-enabled .reveal-item.reveal-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Delay modifiers */
-.reveal-item:nth-child(2) { transition-delay: 0.1s; }
-.reveal-item:nth-child(3) { transition-delay: 0.2s; }
-.reveal-item:nth-child(4) { transition-delay: 0.3s; }
-.reveal-item:nth-child(5) { transition-delay: 0.4s; }
+/* Elements are kept visible by default to ensure 100% compatibility on all hosting platforms */
 
 /* ==========================================================================
    HEADER / NAVBAR

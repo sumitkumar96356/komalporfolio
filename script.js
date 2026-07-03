@@ -63,26 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     handleScroll();
 
     /* ==========================================================================
-       SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
+       SCROLL REVEAL ANIMATIONS (BYPASSED)
        ========================================================================== */
-    const revealItems = document.querySelectorAll('.reveal-item');
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-visible');
-                // Stop observing after reveal to keep it visible and optimize performance
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.05,
-        rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealItems.forEach(item => {
-        revealObserver.observe(item);
-    });
+    // Scroll reveal observers removed to optimize load reliability and hosting compatibility.
 
     /* ==========================================================================
        TYPEWRITER EFFECT
