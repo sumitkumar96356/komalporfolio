@@ -32,10 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleScroll = () => {
         // Sticky class
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         }
 
         // Active link highlighting
@@ -69,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal-visible');
-                // Optional: Stop observing after reveal to keep it visible
-                // observer.unobserve(entry.target);
+                // Stop observing after reveal to keep it visible and optimize performance
+                revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.12,
+        threshold: 0.05,
         rootMargin: '0px 0px -50px 0px'
     });
 
