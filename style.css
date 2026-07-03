@@ -1032,7 +1032,8 @@ section {
         left: -100%;
         width: 100%;
         height: calc(100vh - var(--navbar-height));
-        background: var(--primary);
+        background: var(--white); /* Always white background for mobile menu */
+        border-top: 1px solid rgba(15, 44, 76, 0.05);
         flex-direction: column;
         justify-content: center;
         gap: 25px;
@@ -1045,7 +1046,6 @@ section {
     .navbar.scrolled .nav-menu {
         top: var(--navbar-height-scrolled);
         height: calc(100vh - var(--navbar-height-scrolled));
-        background: var(--white);
     }
     
     .nav-menu.open {
@@ -1054,16 +1054,18 @@ section {
     
     .nav-link {
         font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.85);
+        color: var(--primary); /* Always dark navy color for mobile menu links */
     }
     
-    .navbar.scrolled .nav-link {
-        color: var(--primary);
+    /* Ensure the hamburger close button is dark navy when menu is open on white overlay */
+    .nav-toggle.open .bar {
+        background: var(--primary) !important;
     }
     
     .nav-btn-cta {
         padding: 12px 35px;
         font-size: 1.1rem;
+        text-align: center;
     }
     
     /* Hero layout */
